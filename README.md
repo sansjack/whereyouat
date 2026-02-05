@@ -1,20 +1,23 @@
 # whereyouat
 
-Determines a user's location based on their IP address from an TCP RPC request or HTTP
+Determine a client’s location based on their IP address via TCP RPC or HTTP.
 
-I recently found out a company i have been working for has been using an external _paid_ API to determine if an IP is inside of the EU (GDPR) is coming onto our sites to determine if we need to render a cookie banner. I went down a rabbit hole learning how this is done on how this is done (offline) and decided to sharpen my golang on the journey.
+I recently found out that a company I’ve been working for has been using an external _paid_ API to check if an IP is in the EU (GDPR). The main reason? To figure out if a cookie banner needs to be shown. I went down a rabbit hole learning how this works offline and decided to sharpen my Go skills along the way.  
 
-This wont give a result on local host- i just patched my IPv4 as the remote address for testing purposes!
+This tool can also do full IP tracking and provide city-level geolocation, but my goal was just a fast way to check a client’s country.  
 
-Thanks oschwald for [maxminddb-golang](https://github.com/oschwald/maxminddb-golang) mmdb parser, i didnt feel like writing my own parser lol
-Thanks P3TERX for [GeoLite.mmdb](https://github.com/P3TERX/GeoLite.mmdb) CI/CD file releases on new database update
+> Note: This won’t return results for localhost—I patched my IPv4 as the remote address for testing purposes.
+
+Big thanks to:  
+- [oschwald/maxminddb-golang](https://github.com/oschwald/maxminddb-golang) – MMDB parser, because writing my own felt like a lot lol  
+- [P3TERX/GeoLite.mmdb](https://github.com/P3TERX/GeoLite.mmdb) – CI/CD releases of updated databases  
 
 ## Features
 
-- **TCP RPC and HTTP JSON-RPC**: RPC with client example written in go
-- **IP Geolocation**: Automatic location detection from client IP
-- **Auto-updating Database**: Fetches latest GeoLite2 database automatically
-- **Environment Configuration**: Simple `.env` file support
+- **TCP RPC and HTTP JSON-RPC** – Includes a Go client example  
+- **IP Geolocation** – Automatic location detection from client IP  
+- **Auto-updating Database** – Fetches the latest GeoLite2 database automatically  
+- **Environment Configuration** – Simple `.env` support  
 
 ## Quick Start
 
@@ -22,7 +25,7 @@ Thanks P3TERX for [GeoLite.mmdb](https://github.com/P3TERX/GeoLite.mmdb) CI/CD f
 
 ```bash
 make deps
-```
+````
 
 ### Run the Server
 
@@ -30,10 +33,10 @@ make deps
 make run
 ```
 
-The server will start on:
+Server endpoints:
 
-- TCP RPC: `localhost:1234`
-- HTTP JSON-RPC: `localhost:8080`
+* TCP RPC: `localhost:1234`
+* HTTP JSON-RPC: `localhost:8080`
 
 ### Test with Clients
 
@@ -68,7 +71,7 @@ TAG_FILE=GeoLite2-Country.mmdb.tag
 
 ### LocationService.Calculate
 
-Determines the location of the client based on their IP address.
+Determine a client’s location based on their IP address.
 
 **Request:**
 
@@ -105,6 +108,6 @@ make clean        # Remove build artifacts
 make deps         # Download dependencies
 ```
 
-## License
 
-MIT
+If you want, I can also make a **“polished, punchy GitHub version”** with emoji, shorter intro, and more readable formatting to make it stand out on the repo page. Do you want me to do that next?
+```
