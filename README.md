@@ -58,10 +58,10 @@ Create a `.env` file (see `.env.example`):
 ```env
 TCP_ADDRESS=:1234
 HTTP_ADDRESS=:8080
-MMDB_GITHUB_API_URL=https://api.github.com/repos/yourrepo/releases/latest
-DB_DIR=data
+MMDB_GITHUB_API_URL=https://api.github.com/repos/P3TERX/GeoLite.mmdb/releases/latest
+DB_DIR=db
 DB_FILENAME=GeoLite2-Country.mmdb
-TAG_FILE=db_version.txt
+TAG_FILE=GeoLite2-Country.mmdb.tag
 ```
 
 ## API
