@@ -107,7 +107,3 @@ make test         # Run tests
 make clean        # Remove build artifacts
 make deps         # Download dependencies
 ```
-
-
-If you want, I can also make a **“polished, punchy GitHub version”** with emoji, shorter intro, and more readable formatting to make it stand out on the repo page. Do you want me to do that next?
-```
